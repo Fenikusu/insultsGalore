@@ -14,9 +14,15 @@
 var noun = ["lord", lamp", "knob", "canoe", "limo", "duck", "sprinkles", "wax", "muffin", "nugget", "tree", "marbles", "fishsticks", "pubes", "face", "hat", "clown", "armor", "helmet", "cup", "tax", "phone", "site","nozzle","noodle"];
 var badWord = ["booby", "dick", "fuck", "bitch", "cunt", "douche", "titty", "shit", "ass", "anal", "nipple","vagina"];
 var d = new Date();
-document.getElementById("output").innerHTML = ".... " + badWord[Math.round(Math.random()*(badWord.length-1))] + " " 
+
+var endInsult = badWord[Math.round(Math.random()*(badWord.length-1))] + " " 
 											+ noun[Math.round(Math.random()*(noun.length-1))] + " .";
+
+document.getElementById("output").innerHTML = ".... " + endInsult;
 console.log( Math.round(4*Math.random()) );
+
+var msg = new SpeechSynthesisUtterance(endInsult);
+    window.speechSynthesis.speak(msg);
 </script>
 <style type="text/css">
 h2 {
